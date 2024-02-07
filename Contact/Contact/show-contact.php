@@ -70,6 +70,12 @@ $contacts = $contact->getContact();
         <p class="h3">Contact List</p>
     </section>
 
+    <!-- Search List -->
+        <form action="" method="GET" style="margin-bottom: 30px">
+        <input type="text" id="search" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" placeholder="Search Name or Email">
+        <button type="submit">Cari</button>
+    </form>
+
     <!-- Tabel Contact -->
     <section id="contact-tabel">
         <table class="table table-striped">
@@ -97,7 +103,7 @@ $contacts = $contact->getContact();
                         <button class="btn btn-danger" type="submit" name="delete_contact">Delete</button>
                     </form> -->
                     <a href="edit_contact.php" class="btn btn-success" type="submit" name="edit_contact">Edit</button>
-                    <button class="btn btn-danger" type="submit" name="delete_contact">Delete</button>
+                    <a href="delete-contact.php" class="btn btn-danger" type="submit" name="delete_contact">Delete</button>
                 </td>
             </tr>
             <?php endforeach; ?>
