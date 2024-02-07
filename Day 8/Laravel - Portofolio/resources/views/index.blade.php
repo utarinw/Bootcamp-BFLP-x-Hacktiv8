@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Dua - Utari Nw</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- <nav class="nav">
+    <a class="nav-link active" href="#">HOME</a>
+    <a class="nav-link" href="#">PRODUCT</a>
+    <a class="nav-link" href="#">GALLERY</a>
+    <a class="nav-link" href="#">BLOG</a>
+    <a class="nav-link" href="#">MY INVENTORY</a>
+  </nav> -->
+
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand"></a>
+    <li class="form-inline">
+      <a class="nav-link active" href="#">HOME</a>
+      <a class="nav-link" href="#">PRODUCT</a>
+      <a class="nav-link" href="#">GALLERY</a>
+      <a class="nav-link" href="#">BLOG</a>
+      <a class="nav-link" href="#">MY INVENTORY</a>
+    </li>
+  </nav>
+
+  <div class="col" style="margin-top: 30px;">
+    <div class="card-group">
+      <div class="card d-flex justify-content-center align-items-center">
+        <div class="row g-0">
+          <div class="col-md-4 d-flex">
+            <img src="img/g1.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title" id="getNama">Utari Nw</h5>
+              <p class="card-text" id="getRole">Frontend Developer</p>
+            </div>
+  
+            <div class="flex-row">
+              <a href="#" class="btn btn-outline-success">Kontak</a>
+              <a href="#" class="btn btn-outline-success">Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <b>Availability</b><br />
+              <b>Usia</b><br />
+              <b>Lokasi</b><br />
+              <b>Pengalaman</b><br />
+              <b>Email</b>
+            </div>
+  
+            <div class="col-md-4">
+              <div id="getAvailability">Full Time</div>
+              <div id="getAge">17</div>
+              <div id="getLocate">Jakarta, Indonesia</div>
+              <div id="getYears">2</div>
+              <div id="getEmail">email@email.com</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="col" style="margin-top: 30px;">
+    <div class="form bg-body-secondary" id="FormDiri">
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Nama</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Masukkan Nama">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Role</label>
+        <input type="text" class="form-control" id="InputRole" placeholder="Masukkan Role">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Availability</label>
+        <input type="text" class="form-control" id="InputAvailability" placeholder="Masukkan Status Availability">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Age</label>
+        <input type="text" class="form-control" id="InputAge" placeholder="Masukkan Umur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Lokasi</label>
+        <input type="text" class="form-control" id="InputLocate" placeholder="Masukkan Lokasi">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Years Experience</label>
+        <input type="text" class="form-control" id="InputYears" placeholder="Masukkan Tahun Pengalaman">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label font-weight-bold">Email</label>
+        <input type="text" class="form-control" id="InputEmail" placeholder="email@email.com">
+      </div>
+    </div>
+
+    <div class="button">
+      <button type="button" class="btn btn-success btn-lg btn-block" onclick=inputForm() style="padding: 5px;">Submit</button>
+    </div>
+
+    <br>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="java.js"></script>
+</body>
+</html>
