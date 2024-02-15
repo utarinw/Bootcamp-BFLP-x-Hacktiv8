@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoryController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProdukController;
 
 /*
@@ -44,15 +45,28 @@ Route::get('/addproduk', function () {
 })->name('addproduk');
 
 // CRUD Produk
-Route::group(['prefix' => 'products'], function () {
-    Route::get('/', [ProductController::class, 'index'])->name('produk.index');
-    Route::get('/create', [ProductController::class, 'create'])->name('produk.create');
-    Route::post('/store', [ProductController::class, 'store'])->name('produk.store');
-    Route::get('/{product}', [ProductController::class, 'show'])->name('produk.show');
-    Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('produk.edit');
-    Route::put('/{product}', [ProductController::class, 'update'])->name('produk.update');
-    Route::delete('/{product}', [ProductController::class, 'destroy'])->name('produk.destroy');
-});
+// Route::group(['prefix' => 'products'], function () {
+//     Route::get('/', [ProductController::class, 'index'])->name('produk.index');
+//     Route::get('/create', [ProductController::class, 'create'])->name('produk.create');
+//     Route::post('/store', [ProductController::class, 'store'])->name('produk.store');
+//     Route::get('/{product}', [ProductController::class, 'show'])->name('produk.show');
+//     Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('produk.edit');
+//     Route::put('/{product}', [ProductController::class, 'update'])->name('produk.update');
+//     Route::delete('/{product}', [ProductController::class, 'destroy'])->name('produk.destroy');
+// });
 
 // CRUD Kategori
-Route::resource('kategori', KategoriController::class);
+// Route::resource('kategori', KategoriController::class);
+
+// Route::group(['prefix' => 'kategori'], function () {
+//     Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
+//     Route::get('/create', [KategoriController::class, 'create'])->name('kategori.create');
+//     Route::post('/store', [KategoriController::class, 'store'])->name('kategori.store');
+//     Route::get('/{kategori}', [KategoriController::class, 'show'])->name('kategori.show');
+//     Route::get('/{kategori}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
+//     Route::put('/{kategori}', [KategoriController::class, 'update'])->name('kategori.update');
+//     Route::delete('/{kategori}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+// });
+
+// kategori
+Route::resource('companies', CompanyController::class);

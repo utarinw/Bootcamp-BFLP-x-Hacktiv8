@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CALLA</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+
+@include('layout.navbar')
+@include('layout.sidebar')
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -17,47 +37,6 @@
 
     <!-- Main Content -->
 <section class="content">
-<body>
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
-                    <h2>Laravel 9 CRUD Example Tutorial</h2>
-                </div>
-                <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('companies.create') }}"> Create Company</a>
-                </div>
-            </div>
-        </div>
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Company Name</th>
-                    <th>Company Email</th>
-                    <th>Company Address</th>
-                    <th width="280px">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($kategori as $company)
-                    <tr>
-                        <td>{{ $company->id }}</td>
-                        <td>{{ $company->name }}</td>
-                        <td>{{ $company->email }}</td>
-                        <td>{{ $company->address }}</td>
-                    </tr>
-                    @endforeach
-            </tbody>
-        </table>
-        {!! $kategori->links() !!}
-    </div>
-</body>
     <div class="row">
         <!-- Edit Product -->
         <div class="col-md-4">
@@ -70,7 +49,7 @@
                 </button>
               </div>
             </div>
-            <form action="{{ route('kategori.store') }}" method="post">
+            <form action="{{ route('kategori.create') }}" method="post">
             @csrf
             <div class="card-body">
               <div class="form-group">
@@ -81,9 +60,9 @@
                 <label for="parent_id">Kategori</label>
                 <select id="parent_id" name="parent_id" class="form-control custom-select">  
                   <option value="">Pilih Kategori</option>
-                  <!-- @foreach($categories as $category)
-                  <option value="{{ $category->category_id }}">{{ $category->name }}</option>
-                  @endforeach  -->
+                  @foreach ($kategori as $company)
+                  <option value="{{ $company->category_id }}">{{ $company->name }}</option>
+                  @endforeach 
                 </select>
               </div>
               <div class="button">
@@ -122,22 +101,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                <!-- @foreach ($categories as $category)
+                @foreach ($kategori as $company)
                <tr>
-                        <td>{{ $category->category_id }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->parentCategory ? $category->parentCategory->name : 'None' }}</td>
+                        <td>{{ $company->category_id }}</td>
+                        <td>{{ $company->name }}</td>
+                        <td>{{ $company->parentCategory ? $company->parentCategory->name : 'None' }}</td>
                         <td>
-                            <a href="{{ route('kategori.show', $category->category_id) }}">View</a>
-                            <a href="{{ route('kategori.edit', $category->category_id) }}">Edit</a>
-                            <form action="{{ route('kategori.destroy', $category->category_id) }}" method="POST">
+                            <a href="{{ route('kategori.show', $company->category_id) }}">View</a>
+                            <a href="{{ route('kategori.edit', $company->category_id) }}">Edit</a>
+                            <form action="{{ route('kategori.destroy', $company->category_id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
                             </form>
                         </td>
               </tr>
-              @endforeach -->
+              @endforeach
                 </tbody>
               </table>
             </div>
@@ -147,3 +126,15 @@
     </div>
 </section>
 </div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+</body>
+</html>
