@@ -18,7 +18,7 @@
         <!-- add form -->
         <div class="container mt-5">
         <h3 style="text-align: center; margin-bottom=10px">Form Add Phone Book</h3>
-            <form method="POST" action="/addcontact">
+            <form method="POST" action="{{ route('kategori.create') }}">
                 @csrf
                 <div class="form-group mb-2">
                     <label for="exampleInputEmail1">Email address</label>
